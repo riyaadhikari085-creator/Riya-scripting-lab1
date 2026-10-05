@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function displayColorChoices(colorArr) {
+            const suffix = ["th", "st", "nd", "rd"];
+            colorArr.forEach((color, index) => {
+                const n = index + 1;
+                const rule = (n % 100 >= 11 && n % 100 <= 13) ? 0 : (n % 10 <= 3 ? n % 10 : 0);
+                console.log(`"${n}${suffix[rule]} choice is ${color.trim()}."`);
+            });
+        }
+        const color = ["Blue ", "Green", "Red", "Orange", "White", "Black", "Yellow "];
+        console.log("Q15:");
+        displayColorChoices(color);
+    </script>
+</body>
+</html>

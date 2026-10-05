@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Browser Information</h2>
+<p id="info"></p>
+<button onclick="showInfo()">Show Information</button>
+
+<script>
+function showInfo() {
+    document.getElementById("info").innerHTML =
+        "Browser: " + navigator.userAgent + "<br>" +
+        "Language: " + navigator.language + "<br>" +
+        "Platform: " + navigator.platform + "<br>" +
+        "Online: " + navigator.onLine;
+}
+</script>
+
+</body>
+</html>

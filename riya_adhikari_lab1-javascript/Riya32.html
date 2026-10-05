@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Slider</title>
+</head>
+<body>
+
+    <h2>Image Slider</h2>
+
+    <img id="slider" src="proxy-image.jpg" width="400" height="250">
+
+    <br><br>
+
+    <button onclick="previousImage()">Previous</button>
+    <button onclick="nextImage()">Next</button>
+
+    <script>
+        let images = [
+            src="proxy-image.jpg",
+            "proxy-image.jpg",
+            "proxy-image.jpg",
+            "hi.jpg",
+            "thumbs.jpg"
+        ];
+
+        let index = 0;
+
+        function showImage() {
+            document.getElementById("slider").src = images[index];
+        }
+
+        function nextImage() {
+            index++;
+
+            if (index >= images.length)
+                index = 0;
+
+            showImage();
+        }
+
+        function previousImage() {
+            index--;
+
+            if (index < 0)
+                index = images.length - 1;
+
+            showImage();
+        }
+    </script>
+
+</body>
+</html>

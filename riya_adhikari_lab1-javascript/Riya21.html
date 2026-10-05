@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+    function getWeekendDate() {
+  const today = new Date();
+  const day = today.getDay();
+  const diff = 6 - day;  // ✅ ADD THIS LINE
+  const saturday = new Date(today);
+  saturday.setDate(today.getDate() + diff);
+  return saturday.toDateString();
+}
+console.log("Q21:", getWeekendDate());
+    </script>
+</body>
+</html>

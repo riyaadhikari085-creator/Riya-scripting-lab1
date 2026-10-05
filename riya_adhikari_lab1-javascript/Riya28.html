@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+<style>
+  body { font-family: Arial, sans-serif; text-align: center; }
+  #year { font-size: 2rem; font-weight: bold; }
+  #datetime { display: inline-block; padding: 6px 12px; }
+  ul { list-style: none; padding: 0; }
+  li { padding: 6px; margin: 4px auto; width: 260px; border-radius: 4px; }
+</style>
+</head>
+<body>
+    <h1>Q28 - JS Challenge App</h1>
+ 
+  <div class="wrapper">
+    <h1>JS Challenge</h1>
+    <h2>7 Days of JS Challenge</h2>
+    <div id="year"></div>
+    <div id="datetime"></div>
+    <ul id="challengeList">
+      <li>Python Challenge Done</li>
+      <li>JavaScript Challenge Ongoing</li>
+      <li>React Challenge Coming</li>
+      <li>Full Stack Challenge Coming</li>
+      <li>Data Analysis Challenge Coming</li>
+      <li>React Native Challenge Coming</li>
+      <li>Machine Learning Challenge Coming</li>
+    </ul>
+  </div>
+ 
+  <script>
+    const yearEl = document.getElementById("year");
+    const dateTimeEl = document.getElementById("datetime");
+    const items = document.querySelectorAll("#challengeList li");
+ 
+    
+    const colors = ["red", "blue", "green", "purple", "orange"];
+    setInterval(() => {
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      yearEl.style.color = randomColor;
+      yearEl.textContent = new Date().getFullYear();
+    }, 1000);
+ 
+    
+    setInterval(() => {
+      const now = new Date();
+      dateTimeEl.textContent = now.toLocaleString();
+      const randomBg = colors[Math.floor(Math.random() * colors.length)];
+      dateTimeEl.style.backgroundColor = randomBg;
+      dateTimeEl.style.color = "white";
+    }, 1000);
+ 
+    
+    items.forEach(li => {
+      const text = li.textContent.toLowerCase();
+      if (text.includes("done")) {
+        li.style.background = "Yellow";
+        li.style.color = "white";
+      } else if (text.includes("ongoing")) {
+        li.style.background = "green";
+      } else if (text.includes("coming")) {
+        li.style.background = "red";
+        li.style.color = "white";
+      }
+    });
+  </script>
+</body>
+</html>

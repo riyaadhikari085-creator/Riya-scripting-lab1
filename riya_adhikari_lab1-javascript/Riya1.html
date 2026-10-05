@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function reverseNumber(num) {
+             let reversed = num
+            .toString()
+            .split("")
+            .reverse()
+            .join("");
+             return num < 0 ? "-" + reversed.replace("-", "") : reversed;
+        }
+         console.log("Q1:", reverseNumber(12345));       
+    </script>
+</body>
+</html>

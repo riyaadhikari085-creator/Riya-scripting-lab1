@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Browser Window</h2>
+
+<button onclick="openWin()">Open Window</button>
+<button onclick="closeWin()">Close Window</button>
+<button onclick="resizeWin()">Resize Window</button>
+
+<p id="info"></p>
+
+<script>
+let newWindow;
+
+function openWin() {
+    newWindow = window.open("", "", "width=500,height=400");
+    showInfo();
+}
+
+function closeWin() {
+    if (newWindow) newWindow.close();
+}
+
+function resizeWin() {
+    if (newWindow) newWindow.resizeTo(800, 600);
+    showInfo();
+}
+
+function showInfo() {
+    document.getElementById("info").innerHTML =
+        "Inner Width: " + window.innerWidth + "<br>" +
+        "Inner Height: " + window.innerHeight + "<br>" +
+        "Outer Width: " + window.outerWidth + "<br>" +
+        "Outer Height: " + window.outerHeight;
+}
+
+showInfo();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Counter App</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .counter-box {
+            width: 280px;
+            margin: auto;
+        }
+
+        h2 {
+            margin-bottom: 25px;
+        }
+
+        .counter-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+        }
+
+        button {
+            width: 75px;
+            padding: 8px;
+            font-size: 20px;
+            border: none;
+            border-radius: 6px;
+            background-color: green;
+            color: white;
+            cursor: pointer;
+        }
+
+        #count {
+            width: 75px;
+            padding: 8px;
+            font-size: 20px;
+            text-align: center;
+            background-color: #f5cccc;
+            border-radius: 6px;
+        }
+
+        .reset {
+            margin-top: 25px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="counter-box">
+
+        <h2>Counter App</h2>
+
+        <div class="counter-row">
+
+            <button onclick="increase()">+</button>
+
+            <div id="count">4</div>
+
+            <button onclick="decrease()">-</button>
+
+        </div>
+
+        <button class="reset" onclick="resetCounter()">Reset</button>
+
+    </div>
+
+    <script>
+        // Starting value of the counter
+        let number = 4;
+
+        // Increase the counter
+        function increase() {
+            number++;
+            document.getElementById("count").innerText = number;
+        }
+
+        // Decrease the counter
+        function decrease() {
+            number--;
+            document.getElementById("count").innerText = number;
+        }
+
+        // Reset the counter to 4
+        function resetCounter() {
+            number = 4;
+            document.getElementById("count").innerText = number;
+        }
+    </script>
+
+</body>
+</html>

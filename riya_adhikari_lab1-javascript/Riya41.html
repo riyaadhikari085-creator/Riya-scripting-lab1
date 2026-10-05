@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Duplicate / Clone Rows</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 30px;
+        }
+
+        .title {
+            background: black;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            font-size: 13px;
+        }
+
+        select, input {
+            width: 95%;
+            padding: 7px;
+            box-sizing: border-box;
+        }
+
+        .delete {
+            background: #d9534f;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        #add {
+            background: #17aee3;
+            color: white;
+            border: none;
+            padding: 10px 14px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="title">Duplicate / Clone Rows via Javascript</div>
+
+<table id="myTable">
+    <tr>
+        <th>No</th>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Action</th>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>
+            <select>
+                <option>Select Product</option>
+                <option>Laptop</option>
+                <option>Mobile</option>
+                <option>Keyboard</option>
+            </select>
+        </td>
+        <td><input type="number"></td>
+        <td><button class="delete" onclick="removeRow(this)">🗑</button></td>
+    </tr>
+</table>
+
+<button id="add" onclick="addRow()">Add New</button>
+
+<script>
+function addRow() {
+    let table = document.getElementById("myTable");
+    let row = table.rows[1].cloneNode(true);
+    table.appendChild(row);
+}
+
+function removeRow(btn) {
+    btn.parentElement.parentElement.remove();
+}
+</script>
+
+</body>
+</html>

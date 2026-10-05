@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getCurrentDateFormats() {
+            const d = new Date();
+            const mm = String(d.getMonth() + 1).padStart(2, "0");
+            const dd = String(d.getDate()).padStart(2, "0");
+            const yyyy = d.getFullYear();
+ 
+            const months = ["January","February","March","April","May","June","July",
+                   "August","September","October","November","December"];
+                const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+ 
+             return {
+                "mm-dd-yyyy": `${mm}-${dd}-${yyyy}`,
+                "mm/dd/yyyy": `${mm}/${dd}/${yyyy}`,
+                "dd-mm-yyyy": `${dd}-${mm}-${yyyy}`,
+                "dd/mm/yyyy": `${dd}/${mm}/${yyyy}`,
+                "yyyy month date day": `${yyyy} ${months[d.getMonth()]} ${dd} ${days[d.getDay()]}`
+            };
+        }
+        console.log("Q5:", getCurrentDateFormats());
+ 
+    </script>
+</body>
+</html>

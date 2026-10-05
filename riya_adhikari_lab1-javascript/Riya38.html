@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+
+        .calculator {
+            width: 370px;
+            margin: 100px auto;
+            padding: 5px;
+            border: 1px solid #777;
+        }
+
+        .top {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 4px;
+            margin-bottom: 4px;
+        }
+
+        #display {
+            height: 48px;
+            font-size: 22px;
+            text-align: right;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 4px;
+        }
+
+        button {
+            height: 52px;
+            border: none;
+            border-radius: 5px;
+            background-color: green;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculator">
+
+        <!-- Display and Clear button -->
+        <div class="top">
+
+            <input type="text" id="display" readonly>
+
+            <button onclick="clearDisplay()">C</button>
+
+        </div>
+
+        <!-- Calculator buttons -->
+        <div class="buttons">
+
+            <button onclick="addValue('1')">1</button>
+            <button onclick="addValue('2')">2</button>
+            <button onclick="addValue('3')">3</button>
+            <button onclick="addValue('/')">/</button>
+
+            <button onclick="addValue('4')">4</button>
+            <button onclick="addValue('5')">5</button>
+            <button onclick="addValue('6')">6</button>
+            <button onclick="addValue('*')">*</button>
+
+            <button onclick="addValue('7')">7</button>
+            <button onclick="addValue('8')">8</button>
+            <button onclick="addValue('9')">9</button>
+            <button onclick="addValue('-')">-</button>
+
+            <button onclick="addValue('0')">0</button>
+            <button onclick="addValue('.')">.</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="addValue('+')">+</button>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        // Add numbers and operators to the display
+        function addValue(value) {
+            document.getElementById("display").value += value;
+        }
+
+        // Clear the display
+        function clearDisplay() {
+            document.getElementById("display").value = "";
+        }
+
+        // Calculate the answer
+        function calculate() {
+
+            let display = document.getElementById("display");
+
+            try {
+                if (display.value !== "") {
+                    display.value = eval(display.value);
+                }
+            }
+            catch {
+                display.value = "Error";
+            }
+        }
+
+    </script>
+
+</body>
+</html>

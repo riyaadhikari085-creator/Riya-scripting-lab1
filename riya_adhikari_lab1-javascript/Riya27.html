@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Q27 - DOM Paragraph Manipulation</h1>
+ 
+  <p>First Paragraph</p>
+  <p id="second">Second Paragraph</p>
+  <p id="third">Third Paragraph</p>
+  <p id="fourth">Fourth Paragraph Placeholder</p>
+ 
+  <script>
+   
+    const firstP = document.querySelector("p");
+    console.log("a.", firstP.textContent);
+ 
+   
+    const secondP = document.querySelector("#second");
+    const thirdP = document.querySelector("#third");
+    const fourthP = document.querySelector("#fourth");
+    console.log("b.", secondP.textContent, thirdP.textContent, fourthP.textContent);
+ 
+ 
+    const allParagraphs = document.querySelectorAll("p");
+    console.log("c.", allParagraphs);
+ 
+    allParagraphs.forEach((p, i) => {
+      console.log(`d. Paragraph ${i + 1}: ${p.textContent}`);
+    });
+ 
+    fourthP.textContent = "Fourth Paragraph";
+ 
+    allParagraphs.forEach((p, i) => {
+      p.setAttribute("id", `para-${i + 1}`);   // method 1: setAttribute
+      p.className = `paragraph-item`;           // method 2: className property
+      p.classList.add(`item-${i + 1}`);         // method 3: classList.add
+    });
+ 
+    
+    allParagraphs.forEach((p, i) => {
+      p.style.color = "white";
+      p.style.background = "navy";
+      p.style.border = "1px solid black";
+      p.style.fontSize = "16px";
+      p.style.fontFamily = "Arial, sans-serif";
+    });
+ 
+  
+    allParagraphs.forEach((p, i) => {
+      const position = i + 1;
+      if (position === 1 || position === 3) {
+        p.style.color = "Blue";
+      } else {
+        p.style.color = "Green";
+      }
+      p.textContent = `Paragraph ${position} - styled`;
+      p.id = `styled-para-${position}`;
+      p.className = `styled-paragraph`;
+    });
+  </script>
+</body>
+</html>

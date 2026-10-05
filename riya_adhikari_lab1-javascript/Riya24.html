@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const dog = {};
+        console.log("Q24a-b:", dog); // empty object
+ 
+        dog.name = "Bingo";
+        dog.legs = 4;
+        dog.color = "white";
+        dog.age = 3;
+        dog.bark = function () {
+            return "woof woof";
+        };
+        console.log("Q24c:", dog);
+        console.log("Q24d:", dog.name, dog.legs, dog.color, dog.age, dog.bark());
+ 
+        dog.breed = "White Retriever";
+        dog.getDogInfo = function () {
+            return `${this.name} is a ${this.age}-year-old ${this.color} ${this.breed}.`;
+        };
+        console.log("Q24e:", dog.getDogInfo());
+    </script>
+</body>
+</html>

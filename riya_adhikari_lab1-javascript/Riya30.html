@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Q30 - Countries Table</title>
+<style>
+  table { border-collapse: collapse; }
+  td { border: 1px solid #333; padding: 6px 10px; }
+</style>
+</head>
+<body>
+ 
+  <table id="countryTable"></table>
+ 
+  <script>
+    const countries = [
+      "Afghanistan","Algeria","Argentina","Australia","Austria",
+      "Bangladesh","Belgium","Bhutan","Brazil","Canada","Chile",
+      "China","Colombia","Denmark","Egypt","Finland","France",
+      "Germany","Greece","India","Indonesia","Iran","Iraq",
+      "Ireland","Italy","Japan","Kenya","Malaysia","Mexico",
+      "Nepal","Netherlands","New Zealand","Nigeria","Norway","Pakistan",
+      "Peru","Philippines","Poland","Portugal","Russia","Saudi Arabia",
+      "Singapore","South Africa","South Korea","Spain","Sweden","Switzerland",
+      "Thailand","Turkey","Vietnam"
+    ]; 
+ 
+    const table = document.getElementById("countryTable");
+    const perRow = 6;
+ 
+    for (let i = 0; i < countries.length; i += perRow) {
+      const row = document.createElement("tr");
+      const rowCountries = countries.slice(i, i + perRow);
+      rowCountries.forEach(country => {
+        const cell = document.createElement("td");
+        cell.textContent = country;
+        row.appendChild(cell);
+      });
+      table.appendChild(row);
+    }
+  </script>
+</body>
+</html>

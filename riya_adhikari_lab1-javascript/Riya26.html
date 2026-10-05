@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function tenMostFrequentWords(text) {
+            const words = text
+            .toLowerCase()
+            .replace(/[^\w\s]/g, "")
+            .split(/\s+/)
+            .filter(Boolean);
+ 
+            const frequency = {};
+            words.forEach(w => (frequency[w] = (frequency[w] || 0) + 1));
+ 
+             return Object.entries(frequency)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 10);
+        }
+       
+        const sampleText = "kpop is a talented group, and kpop has many talented members. kpop makes great music, and kpop gives great performances. Fans loves kpop, and Fans supports kpop because kpop always works hard. ";
+        console.log("Q26:", tenMostFrequentWords(sampleText));
+    </script>
+</body>
+</html>

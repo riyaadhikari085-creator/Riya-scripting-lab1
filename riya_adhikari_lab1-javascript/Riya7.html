@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculate(a, b) {
+            a = Number(a);
+            b = Number(b);
+            return {
+                sum: a + b,
+                difference: a - b,
+                product: a * b,
+                quotient: b !== 0 ? a / b : "Cannot divide by zero"
+            };
+        }
+        // In a browser you would gather input like this:
+        // const a = prompt("Enter first number:");
+        // const b = prompt("Enter second number:");
+        console.log("Q7:", calculate(10, 7));
+ 
+    </script>
+</body>
+</html>

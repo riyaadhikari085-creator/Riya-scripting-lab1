@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function countVowels(str) {
+            const matches = str.match(/[aeiou]/gi);
+            return matches ? matches.length : 0;
+        }
+        console.log("Q3:", countVowels("The quick brown fox"));
+    </script>
+</body>
+</html>

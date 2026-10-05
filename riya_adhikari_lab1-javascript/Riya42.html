@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Events</title>
+
+    <style>
+        body {
+            margin-top: 300px;
+            text-align: center;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            width: 85px;
+            height: 58px;
+            border: 1px solid #333;
+            font-size: 12px;
+            text-align: left;
+            padding: 6px;
+            cursor: pointer;
+        }
+
+        /* Same colors as the question */
+        .b1 {
+            background-color: #7dbff8;
+        }
+
+        .b2 {
+            background-color: #f4ffa3;
+        }
+
+        .b3 {
+            background-color: #ee7c7c;
+        }
+
+        .b4 {
+            background-color: #abe187;
+        }
+
+        .b5 {
+            background-color: #a15ed5;
+        }
+
+        .b6 {
+            background-color: #70dfa2;
+        }
+
+        .b7 {
+            background-color: #d6a1e7;
+        }
+
+        .b8 {
+            background-color: #949cf4;
+            color: white;
+        }
+
+        #para {
+            margin: 30px auto;
+            width: 500px;
+            font-size: 12pt;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p id="para">
+      It's like paradise swimming in your golden eyes
+      Build our castle in the sand, watch the sunset holding hands
+      And as the years go by, love you more with every sunrise  
+    </p>
+
+    <div class="buttons">
+
+        <button class="b1" onclick="changeBackground()">
+            Change<br>Background
+        </button>
+
+        <button class="b2" onclick="changeParagraphBackground()">
+            Change<br>Paragraph<br>Background
+        </button>
+
+        <button class="b3" onclick="hideParagraph()">
+            Hide<br>Paragraph
+        </button>
+
+        <button class="b4" onclick="showParagraph()">
+            Show<br>Paragraph
+        </button>
+
+        <button class="b5" onclick="increaseFont()">
+            Increase<br>font Size by<br>2pt.
+        </button>
+
+        <button class="b6" onclick="decreaseFont()">
+            Decrease<br>font Size<br>by 2pt.
+        </button>
+
+        <button class="b7" onclick="resetFont()">
+            Reset<br>font into<br>12 pt.
+        </button>
+
+        <button class="b8" onclick="changeTextColor()">
+            Change<br>Text<br>Color
+        </button>
+
+    </div>
+
+
+    <script>
+
+        function changeBackground() {
+            document.body.style.backgroundColor = "lavender";
+        }
+
+        function changeParagraphBackground() {
+            document.getElementById("para").style.backgroundColor = "pink";
+        }
+
+        function hideParagraph() {
+            document.getElementById("para").style.display = "none";
+        }
+
+        function showParagraph() {
+            document.getElementById("para").style.display = "block";
+        }
+
+        function increaseFont() {
+            let p = document.getElementById("para");
+            let size = parseFloat(p.style.fontSize || "12");
+            p.style.fontSize = (size + 2) + "pt";
+        }
+
+        function decreaseFont() {
+            let p = document.getElementById("para");
+            let size = parseFloat(p.style.fontSize || "12");
+
+            if (size > 2) {
+                p.style.fontSize = (size - 2) + "pt";
+            }
+        }
+
+        function resetFont() {
+            document.getElementById("para").style.fontSize = "12pt";
+        }
+
+        function changeTextColor() {
+            document.getElementById("para").style.color = "pink";
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cookie Management</title>
+</head>
+<body>
+
+<h2>Cookie Management</h2>
+
+<button onclick="addCookie()">Add Cookie</button>
+<button onclick="readCookie()">Read Cookie</button>
+<button onclick="showCookies()">Show All Cookies</button>
+<button onclick="deleteCookie()">Delete Cookie</button>
+<button onclick="deleteAll()">Delete All</button>
+
+<p id="output"></p>
+
+<script>
+function addCookie() {
+    let k = prompt("Enter Key:");
+    let v = prompt("Enter Value:");
+    document.cookie = k + "=" + v + ";path=/";
+    alert("Cookie Saved!");
+}
+
+function readCookie() {
+    let k = prompt("Enter Key:");
+    let c = document.cookie.split("; ");
+    for (let x of c) {
+        let p = x.split("=");
+        if (p[0] == k) {
+            document.getElementById("output").innerHTML = "Value: " + p[1];
+            return;
+        }
+    }
+    document.getElementById("output").innerHTML = "Cookie not found!";
+}
+
+function showCookies() {
+    let c = document.cookie.split("; ");
+    let t = "<table border='1'><tr><th>Key</th><th>Value</th></tr>";
+    for (let x of c) {
+        let p = x.split("=");
+        t += "<tr><td>" + p[0] + "</td><td>" + p[1] + "</td></tr>";
+    }
+    document.getElementById("output").innerHTML = t + "</table>";
+}
+
+function deleteCookie() {
+    let k = prompt("Enter Key to Delete:");
+    document.cookie = k + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+    alert("Cookie Deleted!");
+}
+
+function deleteAll() {
+    let c = document.cookie.split("; ");
+    for (let x of c) {
+        let k = x.split("=")[0];
+        document.cookie = k + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+    }
+    alert("All Cookies Deleted!");
+}
+</script>
+
+</body>
+</html>
